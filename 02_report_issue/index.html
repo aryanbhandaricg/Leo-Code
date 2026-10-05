@@ -27,11 +27,23 @@
 <div class="choice-row" style="margin-bottom:12px"><span class="pill orange">1 Describe</span><span class="pill gray">2 Location & photo</span></div>
 <div class="form-grid">
 <div class="form-group full"><label>Short title *</label><input value="Broken corridor light" placeholder="e.g. Broken corridor light"></div>
-<div class="form-group full"><label>Category *</label><div class="choice-row"><span class="choice selected">⚡ Electrical</span><span class="choice">⌁ Plumbing</span><span class="choice">▤ Furniture</span><span class="choice">⚠ Safety</span><span class="choice">▥ HVAC</span><span class="choice">Other</span></div></div>
-<div class="form-group"><label>Photo *</label><div class="photo-drop"><div><b>＋ Add a clear photo</b>Drag & drop or browse</div></div></div>
+<div class="form-group full"><label>Category *</label><div class="choice-row category-choices">
+<input id="cat-electrical" class="choice-input" type="radio" name="category" checked><label class="choice" for="cat-electrical">⚡ Electrical</label>
+<input id="cat-plumbing" class="choice-input" type="radio" name="category"><label class="choice" for="cat-plumbing">⌁ Plumbing</label>
+<input id="cat-furniture" class="choice-input" type="radio" name="category"><label class="choice" for="cat-furniture">▤ Furniture</label>
+<input id="cat-safety" class="choice-input" type="radio" name="category"><label class="choice" for="cat-safety">⚠ Safety</label>
+<input id="cat-hvac" class="choice-input" type="radio" name="category"><label class="choice" for="cat-hvac">▥ HVAC</label>
+<input id="cat-other" class="choice-input" type="radio" name="category"><label class="choice" for="cat-other">Other</label>
+</div></div>
+<div class="form-group"><label>Photo *</label><input id="issue-photo" class="photo-input" type="file" accept="image/*"><label class="photo-drop" for="issue-photo"><div><b>＋ Add a clear photo</b>Choose an image from your device</div></label></div>
 <div class="form-group"><label>Building</label><select><option>Maple Hostel</option><option>Central Library</option><option>Admin Building</option></select><select><option>Floor 3</option><option>Floor 2</option><option>Ground floor</option></select></div>
 <div class="form-group full"><label>What’s happening? *</label><textarea>The ceiling light flickers most nights and has stopped lighting up the corridor. It's hard to see after 7 PM.</textarea></div>
-<div class="form-group full"><label>Urgency & impact</label><div class="choice-row"><span class="choice">Low<br><small>No immediate impact</small></span><span class="choice selected">Medium<br><small>Affects some users</small></span><span class="choice" style="border-color:#ffb01a">High<br><small>Affects many</small></span><span class="choice">Critical<br><small>Safety risk</small></span></div></div>
+<div class="form-group full"><label>Urgency &amp; impact</label><div class="choice-row urgency-choices">
+<input id="urg-low" class="choice-input" type="radio" name="urgency"><label class="choice" for="urg-low">Low<br><small>No immediate impact</small></label>
+<input id="urg-medium" class="choice-input" type="radio" name="urgency" checked><label class="choice" for="urg-medium">Medium<br><small>Affects some users</small></label>
+<input id="urg-high" class="choice-input" type="radio" name="urgency"><label class="choice" for="urg-high">High<br><small>Affects many</small></label>
+<input id="urg-critical" class="choice-input" type="radio" name="urgency"><label class="choice" for="urg-critical">Critical<br><small>Safety risk</small></label>
+</div></div>
 <div class="form-group full"><label><input type="checkbox" checked style="width:auto"> Send me updates about this issue</label><small class="subtitle">We'll email status changes and resolution updates.</small></div>
 </div>
 <div style="display:flex;justify-content:flex-end;gap:8px;margin-top:16px"><a class="btn btn-outline" href="../01_issue_board/index.html">Save draft</a><a class="btn btn-primary" href="../03_possible_duplicate/index.html">Check for duplicates →</a></div>
