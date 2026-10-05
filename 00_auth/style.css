@@ -1,41 +1,39 @@
-*{box-sizing:border-box}
-:root{--bg:#07111f;--panel:#101c2d;--panel2:#0c1726;--text:#edf3fb;--muted:#91a0b6;--border:#26364b;--orange:#ff8a00;--orange2:#ff6b00}
-html,body{margin:0;min-height:100%;font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--bg);color:var(--text)}
-body{min-height:100vh}
-input,button{font:inherit}
-.auth-shell{min-height:100vh;display:grid;grid-template-columns:1.05fr .95fr}
-.brand-panel{padding:42px 7vw;display:flex;flex-direction:column;background:radial-gradient(circle at 20% 20%,#152b45 0,#07111f 48%);border-right:1px solid var(--border)}
-.brand{font-weight:950;letter-spacing:1.5px;font-size:22px}.brand small{display:block;color:#7f90a7;font-size:8px;letter-spacing:1.8px;margin-top:4px}
-.brand-copy{max-width:590px;margin:auto 0}.eyebrow{font-size:10px;font-weight:900;letter-spacing:1px;color:var(--orange)}
-h1{font-size:clamp(38px,5vw,68px);line-height:.98;letter-spacing:-2.5px;margin:14px 0 22px}
-h1 em{color:#ff9a26;font-style:normal}
-.brand-copy>p{max-width:510px;color:#aab7c9;line-height:1.7;font-size:14px}
-.feature{display:flex;align-items:center;gap:14px;margin-top:18px;color:#aab7c9;font-size:13px}
-.feature b{display:grid;place-items:center;width:31px;height:31px;border:1px solid #33455d;border-radius:7px;color:var(--orange);font-size:9px}
-.feature strong{color:#fff}.footer-note{font-size:8px;color:#62738a;letter-spacing:1.2px}
-.form-panel{display:grid;place-items:center;padding:30px;background:#0a1422}
-.form-wrap{width:min(440px,100%)}
-.mobile-brand{display:none;font-weight:950;letter-spacing:1px;margin-bottom:25px}
-.auth-tabs{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--border);margin-bottom:25px}
-.auth-tabs label{padding:13px;text-align:center;font-size:12px;font-weight:800;color:var(--muted);cursor:pointer}
-#signup-view{position:absolute;opacity:0;pointer-events:none}
-#login-view{position:absolute;opacity:0;pointer-events:none}
-#login-view:checked ~ .auth-shell .auth-tabs label:first-child,
-#signup-view:checked ~ .auth-shell .auth-tabs label:last-child{color:#fff;border-bottom:2px solid var(--orange)}
-.auth-card{background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:27px;box-shadow:0 18px 50px rgba(0,0,0,.22)}
-.auth-card h2{font-size:25px;margin:7px 0}.muted{color:var(--muted);font-size:11px;line-height:1.6;margin-top:0}
-.auth-card form{display:grid;gap:14px;margin-top:23px}
-.auth-card form>label{font-size:10px;font-weight:800;color:#dbe4ef;display:grid;gap:6px}
-.auth-card input[type=text],.auth-card input[type=email],.auth-card input[type=password]{width:100%;padding:12px;border:1px solid var(--border);border-radius:7px;background:var(--panel2);color:var(--text);outline:none}
-.auth-card input:focus{border-color:var(--orange);box-shadow:0 0 0 2px rgba(255,138,0,.1)}
-.auth-card button{border:0;border-radius:7px;padding:12px;background:var(--orange);color:#fff;font-weight:900;cursor:pointer}
-.auth-card button:hover{background:var(--orange2)}
-.row-between{display:flex;justify-content:space-between;align-items:center;font-size:10px}.row-between a{color:var(--orange);text-decoration:none}
-.check{display:flex!important;grid-template-columns:auto 1fr;align-items:center!important;gap:7px!important;color:var(--muted)!important;font-weight:600!important}.check input{width:auto!important}
-.switch{text-align:center;color:var(--muted);font-size:10px;margin:20px 0 0}.switch label{color:var(--orange);font-weight:800;cursor:pointer}
-.signup-card{display:none}
-#signup-view:checked ~ .auth-shell .login-card{display:none}
-#signup-view:checked ~ .auth-shell .signup-card{display:block}
-.terms{font-size:10px!important}
-@media(max-width:800px){.auth-shell{grid-template-columns:1fr}.brand-panel{display:none}.form-panel{min-height:100vh}.mobile-brand{display:block}}
-@media(max-width:480px){.form-panel{padding:18px}.auth-card{padding:21px}.auth-tabs{margin-bottom:18px}}
+:root{--primary-red:#ff4b2b;--primary-red-dark:#e03a1e;--bg-light:#f6f5f7;--text-dark:#2d3748;--text-muted:#718096;--input-bg:#f3f4f6;--shadow-card:0 14px 28px rgba(0,0,0,.22),0 10px 10px rgba(0,0,0,.15);--transition-speed:.6s}
+*{box-sizing:border-box;margin:0;padding:0;font-family:'Montserrat',sans-serif;-webkit-tap-highlight-color:transparent}
+body{background:var(--bg-light);display:flex;justify-content:center;align-items:center;min-height:100vh;padding:20px}
+#login-view,#signup-view{display:none}
+.auth-card{background:#fff;border-radius:12px;box-shadow:var(--shadow-card);position:relative;overflow:hidden;width:768px;max-width:100%;min-height:500px;display:flex}
+.form-container{position:absolute;top:0;height:100%;transition:all var(--transition-speed) ease-in-out}
+.form-container form{background:#fff;display:flex;align-items:center;justify-content:center;flex-direction:column;padding:0 45px;height:100%;text-align:center}
+.fixtrack-mini{color:var(--primary-red);font-size:10px;font-weight:700;letter-spacing:2px;margin-bottom:12px}
+h1{font-weight:700;font-size:26px;color:var(--text-dark);margin-bottom:12px}
+.social-container{margin:12px 0;display:flex;gap:12px}
+.social-icon{border:1px solid #e2e8f0;border-radius:50%;display:inline-flex;justify-content:center;align-items:center;height:40px;width:40px;color:#4a5568;text-decoration:none;font-size:13px;font-weight:700;transition:all .2s ease}
+.social-icon:hover{background:var(--primary-red);color:#fff;border-color:var(--primary-red);transform:translateY(-2px)}
+.subtext{font-size:12px;color:var(--text-muted);margin-bottom:16px}
+.form-container input:not([type=radio]){background:var(--input-bg);border:1px solid transparent;border-radius:8px;padding:12px 16px;margin:6px 0;width:100%;font-size:13px;outline:none;transition:all .2s ease}
+.form-container input:focus{background:#fff;border-color:var(--primary-red);box-shadow:0 0 0 3px rgba(255,75,43,.15)}
+.forgot-pass{color:var(--text-muted);font-size:12px;text-decoration:none;margin:14px 0 16px}
+.forgot-pass:hover{color:var(--primary-red);text-decoration:underline}
+.btn-solid{border-radius:25px;border:1px solid var(--primary-red);background:var(--primary-red);color:#fff;font-size:12px;font-weight:700;padding:12px 45px;letter-spacing:1px;text-transform:uppercase;cursor:pointer;transition:all .2s ease;box-shadow:0 4px 12px rgba(255,75,43,.25)}
+.btn-solid:hover{background:var(--primary-red-dark);border-color:var(--primary-red-dark);transform:translateY(-1px);box-shadow:0 6px 16px rgba(255,75,43,.35)}
+.btn-outline{border-radius:25px;border:1px solid #fff;background:transparent;color:#fff;font-size:12px;font-weight:700;padding:12px 45px;letter-spacing:1px;text-transform:uppercase;cursor:pointer;display:inline-block;transition:all .2s ease}
+.btn-outline:hover{background:#fff;color:var(--primary-red);transform:translateY(-1px)}
+.sign-in-container{left:0;width:50%;z-index:2}
+.sign-up-container{left:0;width:50%;opacity:0;z-index:1}
+.overlay-container{position:absolute;top:0;left:50%;width:50%;height:100%;overflow:hidden;transition:transform var(--transition-speed) ease-in-out;z-index:100}
+.overlay{background:var(--primary-red);color:#fff;position:relative;left:-100%;height:100%;width:200%;transform:translateX(0);transition:transform var(--transition-speed) ease-in-out}
+.overlay-panel{position:absolute;display:flex;align-items:center;justify-content:center;flex-direction:column;padding:0 40px;text-align:center;top:0;height:100%;width:50%;transition:transform var(--transition-speed) ease-in-out}
+.overlay-panel h1{color:#fff;margin-bottom:0}
+.overlay-panel p{font-size:13px;font-weight:300;line-height:20px;margin:16px 0 24px;opacity:.95}
+.overlay-logo{font-size:11px;font-weight:700;letter-spacing:2px;margin-bottom:18px}
+.overlay-left{transform:translateX(-20%)}
+.overlay-right{right:0;transform:translateX(0)}
+#signup-view:checked~.auth-card .sign-in-container{transform:translateX(100%);opacity:0;z-index:1}
+#signup-view:checked~.auth-card .sign-up-container{transform:translateX(100%);opacity:1;z-index:5;animation:revealForm .6s}
+#signup-view:checked~.auth-card .overlay-container{transform:translateX(-100%)}
+#signup-view:checked~.auth-card .overlay{transform:translateX(50%)}
+#signup-view:checked~.auth-card .overlay-left{transform:translateX(0)}
+#signup-view:checked~.auth-card .overlay-right{transform:translateX(20%)}
+@keyframes revealForm{0%,49.99%{opacity:0;z-index:1}50%,100%{opacity:1;z-index:5}}
+@media(max-width:640px){body{padding:12px}.auth-card{min-height:560px}.form-container form{padding:0 24px}.overlay-panel{padding:0 20px}.overlay-panel h1{font-size:22px}.overlay-panel p{font-size:12px}.btn-solid,.btn-outline{padding:10px 32px}}
