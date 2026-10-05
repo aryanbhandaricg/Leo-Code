@@ -6,7 +6,7 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<input id="signup-toggle" type="checkbox">
+<input id="login-view" type="radio" name="auth-view" checked><input id="signup-view" type="radio" name="auth-view">
 <main class="auth-shell">
   <section class="brand-panel">
     <div class="brand">FIXTRACK<small>CIVIL OPERATIONS</small></div>
@@ -27,7 +27,7 @@
 
       <div class="auth-tabs">
         <label for="login-view">Log in</label>
-        <label for="signup-toggle">Create account</label>
+        <label for="signup-view">Create account</label>
       </div>
 
       <div class="auth-card login-card">
@@ -37,10 +37,10 @@
         <form action="../01_issue_board/index.html">
           <label>Email address<input type="email" name="email" placeholder="you@example.com" required></label>
           <label>Password<input type="password" name="password" placeholder="Enter your password" required></label>
-          <div class="row-between"><label class="check"><input type="checkbox"> Remember me</label><a href="#" onclick="return false">Forgot password?</a></div>
+          <div class="row-between"><label class="check"><input type="checkbox"> Remember me</label><span class="forgot">Forgot password?</span></div>
           <button type="submit">Log in →</button>
         </form>
-        <p class="switch">Don't have an account? <label for="signup-toggle">Create one</label></p>
+        <p class="switch">Don't have an account? <label for="signup-view">Create one</label></p>
       </div>
 
       <div class="auth-card signup-card">
@@ -57,7 +57,6 @@
         <p class="switch">Already have an account? <label for="login-view">Log in</label></p>
       </div>
 
-      <input id="login-view" type="radio" name="auth-view" checked>
     </div>
   </section>
 </main>
