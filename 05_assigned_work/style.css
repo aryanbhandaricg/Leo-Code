@@ -17,8 +17,8 @@
   --shadow:0 5px 18px rgba(18,31,53,.06);
   --radius:10px;
 }
-.theme-dark:checked ~ .app,
-.theme-dark:checked ~ *{
+#dark-mode:checked ~ .app,
+#dark-mode:checked ~ *{
   --bg:#0b1220;
   --panel:#111b2b;
   --panel-2:#0e1725;
@@ -137,8 +137,8 @@ textarea{min-height:78px;resize:vertical}
   .sidebar{transform:translateX(-100%);transition:.25s}
   .content{margin-left:0}
   .hamburger{display:flex}
-  #menu-toggle:checked ~ .sidebar{transform:translateX(0)}
-  #menu-toggle:checked ~ .mobile-overlay{display:block;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:15}
+  #menu-toggle:checked ~ .app .sidebar{transform:translateX(0)}
+  #menu-toggle:checked ~ .app .mobile-overlay{display:block;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:15}
   .stats{grid-template-columns:repeat(2,1fr)}
   .grid-2,.grid-3{grid-template-columns:1fr}
 }
