@@ -156,7 +156,7 @@ textarea{min-height:78px;resize:vertical}
 
 /* CSS-only Issue Board filters */
 .filter-controls{position:relative}
-.filter-radio{position:absolute;opacity:0;pointer-events:none}
+.filter-radio{position:absolute;opacity:0;width:1px;height:1px;pointer-events:none}
 .search-field{display:flex;align-items:center;gap:8px;min-width:260px;padding:9px 11px;border:1px solid var(--border);border-radius:7px;background:var(--panel);color:var(--muted)}
 .search-field input{border:0;outline:0;background:transparent;color:var(--text);width:100%;font:inherit}
 .filter-menu{position:relative}
@@ -182,3 +182,15 @@ textarea{min-height:78px;resize:vertical}
 .filter-controls #filter-safety:checked ~ .toolbar ~ .card .issue:not(.issue-safety),
 .filter-controls #filter-furniture:checked ~ .toolbar ~ .card .issue:not(.issue-furniture){display:none}
 @media(max-width:700px){.search-field{min-width:0;flex:1}.filter-menu{flex:1}.filter-menu .field{width:100%}.filter-options{left:auto;right:0}}
+
+/* Make CSS-only filter choices visibly selectable */
+.filter-options label{color:var(--text);background:var(--panel);transition:.15s ease}
+.filter-options label:focus,.filter-options label:active{outline:2px solid var(--orange)}
+.filter-controls #filter-all:checked ~ .toolbar .filter-menu:nth-of-type(1) summary:after{content:"";font-weight:400}
+.filter-controls #filter-electrical:checked ~ .toolbar .filter-menu:nth-of-type(1) summary:after{content:" Electrical"}
+.filter-controls #filter-plumbing:checked ~ .toolbar .filter-menu:nth-of-type(1) summary:after{content:" Plumbing"}
+.filter-controls #filter-safety:checked ~ .toolbar .filter-menu:nth-of-type(1) summary:after{content:" Safety"}
+.filter-controls #filter-furniture:checked ~ .toolbar .filter-menu:nth-of-type(1) summary:after{content:" Furniture"}
+.filter-controls #status-open:checked ~ .toolbar .filter-menu:nth-of-type(2) summary:after{content:" Open"}
+.filter-controls #status-active:checked ~ .toolbar .filter-menu:nth-of-type(2) summary:after{content:" Active"}
+.filter-controls #priority-high:checked ~ .toolbar .filter-menu:nth-of-type(3) summary:after{content:" High / Critical"}
