@@ -153,3 +153,11 @@ textarea{min-height:78px;resize:vertical}
   .image-grid{grid-template-columns:1fr 1fr}.before-after{grid-template-columns:1fr}
   .before-after img{height:170px}
 }
+
+
+/* Completion photo upload */
+.photo-input{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none}
+.photo-drop{cursor:pointer;transition:.15s ease}
+.photo-drop:hover{border-color:var(--orange);background:var(--panel)}
+.photo-input:focus + .photo-drop{border-color:var(--orange);box-shadow:0 0 0 2px rgba(255,138,0,.15)}
+.photo-drop b{font-size:10px;margin-bottom:5px}
