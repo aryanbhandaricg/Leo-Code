@@ -18,10 +18,10 @@ h1 em{color:#ff9a26;font-style:normal}
 .mobile-brand{display:none;font-weight:950;letter-spacing:1px;margin-bottom:25px}
 .auth-tabs{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--border);margin-bottom:25px}
 .auth-tabs label{padding:13px;text-align:center;font-size:12px;font-weight:800;color:var(--muted);cursor:pointer}
-#signup-toggle{position:absolute;opacity:0;pointer-events:none}
+#signup-view{position:absolute;opacity:0;pointer-events:none}
 #login-view{position:absolute;opacity:0;pointer-events:none}
-#signup-toggle:not(:checked) ~ .auth-shell .auth-tabs label:first-child,
-#signup-toggle:checked ~ .auth-shell .auth-tabs label:last-child{color:#fff;border-bottom:2px solid var(--orange)}
+#login-view:checked ~ .auth-shell .auth-tabs label:first-child,
+#signup-view:checked ~ .auth-shell .auth-tabs label:last-child{color:#fff;border-bottom:2px solid var(--orange)}
 .auth-card{background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:27px;box-shadow:0 18px 50px rgba(0,0,0,.22)}
 .auth-card h2{font-size:25px;margin:7px 0}.muted{color:var(--muted);font-size:11px;line-height:1.6;margin-top:0}
 .auth-card form{display:grid;gap:14px;margin-top:23px}
@@ -34,8 +34,8 @@ h1 em{color:#ff9a26;font-style:normal}
 .check{display:flex!important;grid-template-columns:auto 1fr;align-items:center!important;gap:7px!important;color:var(--muted)!important;font-weight:600!important}.check input{width:auto!important}
 .switch{text-align:center;color:var(--muted);font-size:10px;margin:20px 0 0}.switch label{color:var(--orange);font-weight:800;cursor:pointer}
 .signup-card{display:none}
-#signup-toggle:checked ~ .auth-shell .login-card{display:none}
-#signup-toggle:checked ~ .auth-shell .signup-card{display:block}
+#signup-view:checked ~ .auth-shell .login-card{display:none}
+#signup-view:checked ~ .auth-shell .signup-card{display:block}
 .terms{font-size:10px!important}
 @media(max-width:800px){.auth-shell{grid-template-columns:1fr}.brand-panel{display:none}.form-panel{min-height:100vh}.mobile-brand{display:block}}
 @media(max-width:480px){.form-panel{padding:18px}.auth-card{padding:21px}.auth-tabs{margin-bottom:18px}}
