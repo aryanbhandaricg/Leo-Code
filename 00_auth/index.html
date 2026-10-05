@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FixTrack — Login / Sign Up</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<input id="signup-toggle" type="checkbox">
+<main class="auth-shell">
+  <section class="brand-panel">
+    <div class="brand">FIXTRACK<small>CIVIL OPERATIONS</small></div>
+    <div class="brand-copy">
+      <span class="eyebrow">SHARED INFRASTRUCTURE MANAGEMENT</span>
+      <h1>Fix what's broken.<br><em>Keep everyone moving.</em></h1>
+      <p>Report issues, avoid duplicate complaints, track maintenance work and verify fixes — all in one shared workspace.</p>
+      <div class="feature"><b>01</b><span><strong>Report quickly</strong> with a photo and location.</span></div>
+      <div class="feature"><b>02</b><span><strong>Stay informed</strong> as your issue moves forward.</span></div>
+      <div class="feature"><b>03</b><span><strong>Close the loop</strong> by verifying the fix.</span></div>
+    </div>
+    <div class="footer-note">FIXTRACK • HACKATHON DEMO</div>
+  </section>
+
+  <section class="form-panel">
+    <div class="form-wrap">
+      <div class="mobile-brand">FIXTRACK</div>
+
+      <div class="auth-tabs">
+        <label for="login-view">Log in</label>
+        <label for="signup-toggle">Create account</label>
+      </div>
+
+      <div class="auth-card login-card">
+        <div class="eyebrow">WELCOME BACK</div>
+        <h2>Log in to FixTrack</h2>
+        <p class="muted">Access your shared infrastructure workspace.</p>
+        <form action="../01_issue_board/index.html">
+          <label>Email address<input type="email" name="email" placeholder="you@example.com" required></label>
+          <label>Password<input type="password" name="password" placeholder="Enter your password" required></label>
+          <div class="row-between"><label class="check"><input type="checkbox"> Remember me</label><a href="#" onclick="return false">Forgot password?</a></div>
+          <button type="submit">Log in →</button>
+        </form>
+        <p class="switch">Don't have an account? <label for="signup-toggle">Create one</label></p>
+      </div>
+
+      <div class="auth-card signup-card">
+        <div class="eyebrow">GET STARTED</div>
+        <h2>Create your account</h2>
+        <p class="muted">Join the FixTrack workspace and start reporting issues.</p>
+        <form action="../01_issue_board/index.html">
+          <label>Full name<input type="text" name="name" placeholder="Your full name" required></label>
+          <label>Email address<input type="email" name="email" placeholder="you@example.com" required></label>
+          <label>Password<input type="password" name="password" placeholder="Create a password" required></label>
+          <label class="check terms"><input type="checkbox" required> I agree to the FixTrack demo terms</label>
+          <button type="submit">Create account →</button>
+        </form>
+        <p class="switch">Already have an account? <label for="login-view">Log in</label></p>
+      </div>
+
+      <input id="login-view" type="radio" name="auth-view" checked>
+    </div>
+  </section>
+</main>
+</body>
+</html>
