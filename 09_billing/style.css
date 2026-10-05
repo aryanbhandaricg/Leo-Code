@@ -1,4 +1,3 @@
-
 :root{
   --orange:#ff6a00;--orange2:#f28a18;--navy:#091426;--teal:#0aa68b;
   --blue:#2f8de6;--purple:#5a4be7;--red:#ed4f62;--yellow:#f4b942;
@@ -107,4 +106,192 @@ select,.input{width:100%;border:1px solid var(--border);background:var(--panel);
 }
 #dark:not(:checked) ~ .app .theme {
   font-size:0;
+}
+
+
+/* ===== PAYMENT CLEARED + INVOICE ===== */
+
+/* CSS-only payment state */
+.payment-state{
+  position:absolute;
+  opacity:0;
+  pointer-events:none;
+}
+
+.payment-success,
+.invoice-after-payment{
+  display:none;
+}
+
+/* Show success message after payment is cleared */
+.payment-state:checked ~ .payment-success{
+  display:flex;
+}
+
+/* Show invoice after payment is cleared */
+.payment-state:checked ~ .invoice-after-payment{
+  display:block;
+}
+
+/* Hide the payment button after payment is cleared */
+.payment-state:checked ~ .payment-trigger{
+  display:none;
+}
+
+.payment-success{
+  margin-top:12px;
+  padding:12px;
+  border:1px solid #b8ead9;
+  background:#eafaf5;
+  color:#087d69;
+  border-radius:8px;
+  align-items:center;
+  gap:10px;
+}
+
+.payment-success .success-icon{
+  width:28px;
+  height:28px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  background:#0aa68b;
+  color:#fff;
+  font-weight:900;
+  flex:none;
+}
+
+.payment-success strong,
+.payment-success span{
+  display:block;
+}
+
+.payment-success strong{
+  font-size:11px;
+}
+
+.payment-success span{
+  font-size:9px;
+  margin-top:3px;
+}
+
+/* Invoice / receipt */
+.invoice-after-payment{
+  margin-top:14px;
+  border:1px solid var(--border);
+  border-radius:9px;
+  overflow:hidden;
+  background:var(--panel);
+}
+
+.invoice-head{
+  padding:13px 14px;
+  border-bottom:1px solid var(--border);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+}
+
+.invoice-head > div:first-child{
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+
+.invoice-meta{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+  padding:13px 14px;
+  background:var(--panel2);
+}
+
+.invoice-meta span{
+  display:block;
+  font-size:8px;
+  color:var(--muted);
+  margin-bottom:3px;
+}
+
+.invoice-meta b{
+  font-size:9px;
+}
+
+.invoice-items{
+  padding:5px 14px;
+}
+
+.invoice-items > div{
+  display:flex;
+  justify-content:space-between;
+  gap:15px;
+  padding:8px 0;
+  border-bottom:1px solid var(--border);
+  font-size:9px;
+}
+
+.invoice-items .invoice-total{
+  border:0;
+  font-size:11px;
+  font-weight:900;
+  color:#087d69;
+}
+
+.invoice-footer{
+  padding:11px 14px;
+  background:var(--panel2);
+  color:var(--muted);
+  font-size:9px;
+}
+
+.invoice-footer strong{
+  color:#087d69;
+}
+
+/* Better dark-mode appearance */
+#dark:checked ~ .app .payment-success{
+  background:#0d2925;
+  border-color:#185c50;
+  color:#7de0c5;
+}
+
+#dark:checked ~ .app .invoice-after-payment{
+  background:var(--panel);
+}
+
+/* Mobile */
+@media(max-width:600px){
+  .invoice-meta{
+    grid-template-columns:1fr;
+  }
+
+  .invoice-head{
+    align-items:flex-start;
+    flex-direction:column;
+  }
+
+  .invoice-items > div{
+    gap:15px;
+  }
+}
+
+/* Print the cleared invoice, but not the payment controls */
+@media print{
+  #payment-cleared:not(:checked) ~ .payment-success,
+  #payment-cleared:not(:checked) ~ .invoice-after-payment{
+    display:none !important;
+  }
+
+  #payment-cleared:checked ~ .payment-success{
+    display:flex !important;
+  }
+
+  #payment-cleared:checked ~ .invoice-after-payment{
+    display:block !important;
+  }
+
+  .payment-trigger{
+    display:none !important;
+  }
 }
