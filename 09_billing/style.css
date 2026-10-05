@@ -295,3 +295,8 @@ select,.input{width:100%;border:1px solid var(--border);background:var(--panel);
     display:none !important;
   }
 }
+
+.payment-choice{position:absolute;opacity:0;width:1px;height:1px}
+.pay{display:block;cursor:pointer;transition:.15s ease}
+.pay:hover{border-color:var(--orange)}
+.payment-choice:checked + .pay{border:2px solid var(--orange);padding:11px;background:var(--panel-2);box-shadow:0 0 0 1px rgba(255,138,0,.08)}
