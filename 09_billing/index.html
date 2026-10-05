@@ -57,7 +57,7 @@
         </div>
         <div style="display:flex;gap:8px;align-items:center">
           <span class="pill p-green">● Billing Gateway Active</span>
-          <button class="btn outline print-btn" type="button" title="Use Ctrl+P or your browser's Print command to save as PDF">🖨 Print / Save Bill</button>
+          <a class="btn outline print-btn" href="bill.html" download="FixTrack-Bill-WO-8924.html" title="Download the bill file">🖨 Print / Save Bill</a>
         </div>
       </div>
 
@@ -78,9 +78,12 @@
 
             <h3 style="font-size:11px;margin:18px 0 8px">Select Payment Method</h3>
             <div class="paymethods">
-              <div class="pay selected">▤<br><b>Corporate Card</b></div>
-              <div class="pay">□<br>Campus PO</div>
-              <div class="pay">♜<br>ACH Direct Debit</div>
+              <input class="payment-choice" id="pay-card" type="radio" name="payment-method" checked>
+              <label class="pay" for="pay-card">▤<br><b>Corporate Card</b></label>
+              <input class="payment-choice" id="pay-po" type="radio" name="payment-method">
+              <label class="pay" for="pay-po">□<br><b>Campus PO</b></label>
+              <input class="payment-choice" id="pay-ach" type="radio" name="payment-method">
+              <label class="pay" for="pay-ach">♜<br><b>ACH Direct Debit</b></label>
             </div>
 
             <div class="form2">
