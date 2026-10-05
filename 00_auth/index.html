@@ -1,64 +1,68 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>FixTrack — Login / Sign Up</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FixTrack — Authentication</title>
 <link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-<input id="login-view" type="radio" name="auth-view" checked><input id="signup-view" type="radio" name="auth-view">
-<main class="auth-shell">
-  <section class="brand-panel">
-    <div class="brand">FIXTRACK<small>CIVIL OPERATIONS</small></div>
-    <div class="brand-copy">
-      <span class="eyebrow">SHARED INFRASTRUCTURE MANAGEMENT</span>
-      <h1>Fix what's broken.<br><em>Keep everyone moving.</em></h1>
-      <p>Report issues, avoid duplicate complaints, track maintenance work and verify fixes — all in one shared workspace.</p>
-      <div class="feature"><b>01</b><span><strong>Report quickly</strong> with a photo and location.</span></div>
-      <div class="feature"><b>02</b><span><strong>Stay informed</strong> as your issue moves forward.</span></div>
-      <div class="feature"><b>03</b><span><strong>Close the loop</strong> by verifying the fix.</span></div>
+<input type="radio" id="login-view" name="auth-view" checked>
+<input type="radio" id="signup-view" name="auth-view">
+
+<main class="auth-card">
+  <div class="form-container sign-in-container">
+    <form action="../01_issue_board/index.html">
+      <div class="fixtrack-mini">FIXTRACK</div>
+      <h1>Sign in</h1>
+      <div class="social-container">
+        <a href="#" class="social-icon" aria-label="Facebook">f</a>
+        <a href="#" class="social-icon" aria-label="Google">G</a>
+        <a href="#" class="social-icon" aria-label="LinkedIn">in</a>
+      </div>
+      <span class="subtext">or use your FixTrack account</span>
+      <input type="email" name="email" placeholder="Email" required autocomplete="email">
+      <input type="password" name="password" placeholder="Password" required autocomplete="current-password">
+      <a href="#" class="forgot-pass">Forgot your password?</a>
+      <button type="submit" class="btn-solid">SIGN IN</button>
+    </form>
+  </div>
+
+  <div class="form-container sign-up-container">
+    <form action="../01_issue_board/index.html">
+      <div class="fixtrack-mini">FIXTRACK</div>
+      <h1>Create Account</h1>
+      <div class="social-container">
+        <a href="#" class="social-icon" aria-label="Facebook">f</a>
+        <a href="#" class="social-icon" aria-label="Google">G</a>
+        <a href="#" class="social-icon" aria-label="LinkedIn">in</a>
+      </div>
+      <span class="subtext">or use your email for registration</span>
+      <input type="text" name="name" placeholder="Name" required autocomplete="name">
+      <input type="email" name="email" placeholder="Email" required autocomplete="email">
+      <input type="password" name="password" placeholder="Password" required autocomplete="new-password">
+      <button type="submit" class="btn-solid">SIGN UP</button>
+    </form>
+  </div>
+
+  <div class="overlay-container">
+    <div class="overlay">
+      <div class="overlay-panel overlay-left">
+        <div class="overlay-logo">FIXTRACK</div>
+        <h1>Welcome Back!</h1>
+        <p>To keep your infrastructure moving, sign in with your FixTrack account.</p>
+        <label for="login-view" class="btn-outline">SIGN IN</label>
+      </div>
+      <div class="overlay-panel overlay-right">
+        <div class="overlay-logo">FIXTRACK</div>
+        <h1>Hello, Friend!</h1>
+        <p>Enter your details and join the shared infrastructure workspace.</p>
+        <label for="signup-view" class="btn-outline">SIGN UP</label>
+      </div>
     </div>
-    <div class="footer-note">FIXTRACK • HACKATHON DEMO</div>
-  </section>
-
-  <section class="form-panel">
-    <div class="form-wrap">
-      <div class="mobile-brand">FIXTRACK</div>
-
-      <div class="auth-tabs">
-        <label for="login-view">Log in</label>
-        <label for="signup-view">Create account</label>
-      </div>
-
-      <div class="auth-card login-card">
-        <div class="eyebrow">WELCOME BACK</div>
-        <h2>Log in to FixTrack</h2>
-        <p class="muted">Access your shared infrastructure workspace.</p>
-        <form action="../01_issue_board/index.html">
-          <label>Email address<input type="email" name="email" placeholder="you@example.com" required></label>
-          <label>Password<input type="password" name="password" placeholder="Enter your password" required></label>
-          <div class="row-between"><label class="check"><input type="checkbox"> Remember me</label><span class="forgot">Forgot password?</span></div>
-          <button type="submit">Log in →</button>
-        </form>
-        <p class="switch">Don't have an account? <label for="signup-view">Create one</label></p>
-      </div>
-
-      <div class="auth-card signup-card">
-        <div class="eyebrow">GET STARTED</div>
-        <h2>Create your account</h2>
-        <p class="muted">Join the FixTrack workspace and start reporting issues.</p>
-        <form action="../01_issue_board/index.html">
-          <label>Full name<input type="text" name="name" placeholder="Your full name" required></label>
-          <label>Email address<input type="email" name="email" placeholder="you@example.com" required></label>
-          <label>Password<input type="password" name="password" placeholder="Create a password" required></label>
-          <label class="check terms"><input type="checkbox" required> I agree to the FixTrack demo terms</label>
-          <button type="submit">Create account →</button>
-        </form>
-        <p class="switch">Already have an account? <label for="login-view">Log in</label></p>
-      </div>
-
-    </div>
-  </section>
+  </div>
 </main>
 </body>
 </html>
