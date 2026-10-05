@@ -78,9 +78,10 @@ h1{font-size:20px;margin:4px 0;font-weight:850;letter-spacing:-.3px}
 .toolbar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
 .field{border:1px solid var(--border);background:var(--panel);border-radius:7px;padding:8px 10px;color:var(--muted);min-width:160px}
 .issue-list{display:flex;flex-direction:column}
-.issue{display:grid;grid-template-columns:36px 1fr auto auto;gap:10px;align-items:center;padding:11px 12px;border-bottom:1px solid var(--border)}
+.issue{display:grid;grid-template-columns:64px 1fr auto auto;gap:10px;align-items:center;padding:11px 12px;border-bottom:1px solid var(--border)}
 .issue:last-child{border-bottom:0}
 .issue-icon{width:30px;height:30px;border-radius:7px;display:grid;place-items:center;font-weight:900;background:#fff3e1;color:var(--orange)}
+.issue-thumb{width:64px;height:46px;object-fit:cover;border-radius:7px;border:1px solid var(--border);background:var(--panel-2);display:block}
 .issue-title{font-weight:750;font-size:11px}
 .issue-meta{font-size:9px;color:var(--muted);margin-top:3px}
 .pill{border-radius:20px;padding:4px 8px;font-size:8px;font-weight:800;white-space:nowrap}
@@ -148,7 +149,7 @@ textarea{min-height:78px;resize:vertical}
   .topbar .actions .hide-mobile{display:none}
   .stats{grid-template-columns:1fr 1fr}
   .form-grid{grid-template-columns:1fr}.form-group.full{grid-column:auto}
-  .issue{grid-template-columns:32px 1fr}.issue .pill,.issue .issue-arrow{display:none}
+  .issue{grid-template-columns:52px 1fr}.issue-thumb{width:52px;height:42px}.issue .pill,.issue .issue-arrow{display:none}
   .title-row{align-items:flex-start}.title-row .btn{white-space:nowrap}
   .image-grid{grid-template-columns:1fr 1fr}.before-after{grid-template-columns:1fr}
   .before-after img{height:170px}
